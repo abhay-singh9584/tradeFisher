@@ -10,7 +10,7 @@ var userProfile;
 
 
 router.get('/',async(req,res)=>{
-    res.send('Not Logged In')
+    res.render('index')
 })
 
 router.post('/register',async (req,res)=>{
