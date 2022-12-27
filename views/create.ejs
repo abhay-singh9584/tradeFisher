@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        #box{
+            width: 500px;
+            padding: 30px;
+            font-family: 'gilroy';
+            position: relative; 
+            color: white;
+            /* line-height: 10px; */
+            margin-top: 10px;
+            background-color: rgb(148, 151, 153);
+        }
+        a{
+            font-size: 24px;
+            /* width: 30px; */
+            padding: 10px;
+            /* margin-top: 15px; */
+            margin-left: 50px;
+            background-color: blue;
+            text-decoration: none;
+            color: white;
+        }
+        #delete{
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(0,-50%);
+            background-color: red;
+        }
+        span{
+            margin-left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <%data.forEach(function(i){ %>
+            <div id="box">
+                    <h2>Name: <%=i.name%></h2>
+                    <h4>Age: <%=i.age%></h4>
+                    <h4>Email: <%=i.email%></h4>
+                    <a id="delete" href=<%=`/delete/${i.name}`%>>Delete</a>
+            </div>
+        <%})%>
+        <br>
+        <span>
+            <%for(let j=1;j<=Math.ceil(len/3);j++){%>
+                <a href=<%=`/read/${j}`%>><%=j%></a> 
+            <%}%>
+            <!-- <a href="/read/2">02</a> -->
+        </span>
+    </main>
+</body>
+</html>
