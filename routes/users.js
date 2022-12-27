@@ -5,7 +5,7 @@ var mongoose=require('mongoose');
 const jwt=require('jsonwebtoken')
 const session=require('express-session')
 
-mongoose.connect('mongodb://localhost/TradeFisher')
+mongoose.connect('mongodb+srv://Anil:Anil8518@tradefisher.0rudn2r.mongodb.net/?retryWrites=true&w=majority')
 
 var userSchema=mongoose.Schema({
   number:{
